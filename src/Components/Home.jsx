@@ -4,7 +4,11 @@ const Home = () => {
     const arr=[1,2,3,4];
 const [temp,setTemp]=useState(0);
  useEffect(() =>{
-console.log('working');
+console.log('Mounting');
+return ()=>{
+  console.log('unmounting');
+}
+
 
  },[temp])   
   return (
