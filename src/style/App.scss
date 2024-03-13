@@ -8,7 +8,13 @@
   text-decoration: none;
   scroll-behavior: smooth;
 }
-
+.home{
+  display: flex;
+  padding: 2rem;
+  flex-wrap: wrap;
+  
+  
+  }
   h1,h2{
     
  text-transform: uppercase;
@@ -32,3 +38,65 @@ form{
     
     }
 
+.coin{
+  margin: 2rem;
+  padding: 2rem;
+  background-color: rgb(236,236,236);
+  border-radius: 10px;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  gap: 10px;
+
+  }
+
+    .coin>img{
+      
+     width: 100px;
+     height: 100px;
+     object-fit: contain; 
+      
+      }
+
+     .coin>h1{
+      text-transform: uppercase;
+      
+      }
+
+        .loading{
+          margin: auto;
+          padding: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 80vh;
+          width: 100%;
+          }
+
+            .loading p{
+              font: 400 2rem sans-serif;
+              
+              }
+    .loading>div{
+      width: 300px;
+      height: 300px;
+      border-bottom: 1px solid black;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      animation: rotation .2s infinite linear;
+
+      }    
+
+@keyframes rotation{
+  to{
+    transform: rotateZ(360deg)
+    
+    }
+
+}
+    

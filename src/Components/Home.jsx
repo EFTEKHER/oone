@@ -1,9 +1,11 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 import Coin from './Product';
+import Loader from './Loader';
 const Home = () => {
-    const arr=[1,2,3,4];
-const [temp,setTemp]=useState(0);
+    
+const [coins,setCoins]=useState([]);
+const [loading,setLoading]=useState(true);
 const cors = require('cors');
 const corsOptions ={
     origin:'http://localhost:3000', 
@@ -14,19 +16,26 @@ cors(corsOptions);
  useEffect(() =>{
 
 const  fetchAllCoins=async()=>{
-  const {data}=await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=bdt&per_page=20')
-  console.log(data);
+  try{
+    const {data}=await axios.get('https://raw.githubusercontent.com/EFTEKHER/cyrptoapi/main/crypto.txt')
+  console.log(data)
+  setCoins(data);
+  setLoading(false);
+  }catch(e){
+    console.log(e.message);
+  }; 
+  
 }
 fetchAllCoins();
 
  },[])   
   return (
-    <div>
-    <button onClick={()=>setTemp(temp+1)} >Click</button>
+    <div className='home'>
+    
       {
-        arr.map((i)=>(<Coin name={"BitCoin"} symbol={"BTC"} key={i} />))
+      loading?<Loader/>:   coins.map((i)=>(<Coin name={i.name} img={i.image} symbol={i.symbol} key={i.id} price={i.current_price} />))
       }
-      <h1>{temp}</h1>
+      
     </div>
   )
 }

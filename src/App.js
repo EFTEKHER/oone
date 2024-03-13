@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import './style/header.scss'
 import './style/colors.scss'
 import './style/App.scss'
