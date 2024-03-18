@@ -2,6 +2,7 @@ import React from "react";
 
 import { HashLink } from "react-router-hash-link";
 
+
 const Header = () => {
   return (
     <nav>
@@ -12,6 +13,7 @@ const Header = () => {
         <HashLink to={"/about"}>About</HashLink>
         <HashLink to={"/product"}>Product</HashLink>
         <HashLink to={"/services"}>Services</HashLink>
+        <HashLink to={"/miniproduct"}>MiniProduct</HashLink>
       </main>
     </nav>
   );
