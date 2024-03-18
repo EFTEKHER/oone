@@ -1,12 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { firstReducer } from "./reducer";
+// import { configureStore } from "@reduxjs/toolkit";
+// import { firstReducer } from "./reducer";
 
- const store=configureStore({
+//  const store=configureStore({
 
-    reducer: {
-        first:firstReducer
-    },
-})
+//     reducer: {
+//         first:firstReducer
+//     },
+// })
 
 
-export default store;
+// export default store;
